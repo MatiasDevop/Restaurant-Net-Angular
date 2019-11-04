@@ -11,7 +11,7 @@ export class ItemService {
   constructor(private http:HttpClient) { }
   getItemList(): Observable<any> {
     
-    return this.http.get('http://localhost:4000/getitems');
+    return this.http.get('https://restaurant-dbapi.herokuapp.com/getitems');
     //return this.http.get(environment.apiURL + '/item').toPromise();
   }
 }

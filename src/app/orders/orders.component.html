@@ -5,18 +5,20 @@
         <th>p. Method</th>
         <th>G. Total</th>
         <th>
-            <a class="btn btn-outline-success" routerLink="/order"> <i class="fa fa-plus-square"></i> Create New</a>
+            <a class="btn btn-success" routerLink="/order"> <i class="fa fa-plus-square"></i> Create New</a>
         </th>
     </thead>
     <tbody>
         <tr *ngFor="let item of orderList">
-            <th (click)="openForEdit(item.OrderID)">{{item.OrderNo}}</th>
+            <th>
+                <button class="btn btn-info" (click)="openForEdit(item.OrderID)" >{{item.OrderNo}}</button>
+            </th>
             <!-- <td>{{item.Customer}}</td> -->
             <td>{{item.Name}}</td>
             <td>{{item.PMethod}}</td>
             <td>{{item.GTotal}}</td>
             <td>
-                <a class="btn btn-danger" (click)="onOrderDelete(item.OrderID)"> <i class="fa fa-trash fa-lg"></i> Delete Order</a>
+                <a class="btn btn-danger btn-sm" (click)="onOrderDelete(item.OrderID)"> <i class="fa fa-trash fa-lg"></i> Delete Order</a>
             </td>
         </tr>
     </tbody>

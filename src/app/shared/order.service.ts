@@ -26,19 +26,19 @@ export class OrderService {
       ...this.formData,
       OrderItems:this.orderItems
     };
-    return this.http.post('http://localhost:4000/order', body);//environment.apiURL + '/Order'
+    return this.http.post('https://restaurant-dbapi.herokuapp.com/order', body);//environment.apiURL + '/Order'
   }
   getOrderList(): Observable<any> {
-    return this.http.get('http://localhost:4000/getOrders');
+    return this.http.get('https://restaurant-dbapi.herokuapp.com/getOrders');
     //return this.http.get(environment.apiURL + '/Order');//.toPromise();
   }
   getOrderByID(id:number): Observable<any> {
-    return this.http.get('http://localhost:4000/getOrderBy/' + id);
+    return this.http.get('https://restaurant-dbapi.herokuapp.com/getOrderBy/' + id);
     // return this.http.get(environment.apiURL + '/Order/' + id);//.toPromise();
   }
   deleteOrder(id:number){
 
-    return this.http.delete('http://localhost:4000/deleteBy/' + id)
+    return this.http.delete('https://restaurant-dbapi.herokuapp.com/deleteBy/' + id)
     .pipe(retry(1),
     catchError(this.errorHandl));
   }

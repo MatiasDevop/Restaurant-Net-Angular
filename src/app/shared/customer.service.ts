@@ -12,7 +12,7 @@ export class CustomerService {
   constructor(private http: HttpClient) { }
 
   getCustomerList(): Observable<any> {
-    return this.http.get('http://localhost:4000/getcustomers');
+    return this.http.get('https://restaurant-dbapi.herokuapp.com/getcustomers');
    // return this.http.get(environment.apiURL + '/Customer');//.toPromise();
   }
 }

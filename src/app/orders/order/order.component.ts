@@ -19,7 +19,7 @@ export class OrderComponent implements OnInit {
   customerList:Customer[];
   isValid:boolean = true;
 
-  constructor(private service: OrderService,
+  constructor(public service: OrderService,
     private dialog: MatDialog,
     private customerService: CustomerService,
     private toastr: ToastrService,
