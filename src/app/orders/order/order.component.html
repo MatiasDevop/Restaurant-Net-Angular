@@ -60,10 +60,12 @@
                     </td>
                 </tr>
                 <tr *ngFor="let item of service.orderItems; let i = index;">
-                    <td>{{item.ItemName}}</td>
+                     <td>{{item.Name}}</td> 
+                    <!-- <td>{{item.ItemName}}</td> -->
                     <td>{{item.Price}}</td>
                     <td>{{item.Quantity}}</td>
-                    <td>{{item.Total}}</td>
+                    <td>{{item.Price * item.Quantity}}</td>
+                    <!-- <td>{{item.Total}}</td> -->
                     <td>
                         <a class="btn btn-sm btn-info text-white" (click)="AddOrEditOrderItem(i, service.formData.OrderID)"><i class="fa fa-pencil"></i>Edit item </a>
                         <a class="btn btn-sm btn-danger text-white ml-1" (click)="onDeleteOrderItem(item.OrderItemID, service.formData.OrderID)"><i class="fa fa-trash"></i>Delete item </a>

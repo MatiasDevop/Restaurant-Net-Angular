@@ -3,8 +3,11 @@ export class OrderItem {
     OrderID:number;
     ItemID:number;
     Quantity:number;
-    ItemName:string;
+    Name:string;
+    //ItemName:string;
     Price:number;
     Total:number;
+
+
 
 }

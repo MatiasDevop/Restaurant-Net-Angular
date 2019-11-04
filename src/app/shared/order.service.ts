@@ -16,24 +16,29 @@ export class OrderService {
   formData: Order;
   orderItems:OrderItem[];
 
-  constructor(private http:HttpClient) { }
+  constructor(private http:HttpClient) {
+  
+   }
 
   saveOrUpdateOrder(){
 
-    var body={
+    var body = {
       ...this.formData,
       OrderItems:this.orderItems
     };
-    return this.http.post(environment.apiURL + '/Order', body);
+    return this.http.post('http://localhost:4000/order', body);//environment.apiURL + '/Order'
   }
   getOrderList(): Observable<any> {
-    return this.http.get(environment.apiURL + '/Order');//.toPromise();
+    return this.http.get('http://localhost:4000/getOrders');
+    //return this.http.get(environment.apiURL + '/Order');//.toPromise();
   }
   getOrderByID(id:number): Observable<any> {
-    return this.http.get(environment.apiURL + '/Order/' + id);//.toPromise();
+    return this.http.get('http://localhost:4000/getOrderBy/' + id);
+    // return this.http.get(environment.apiURL + '/Order/' + id);//.toPromise();
   }
   deleteOrder(id:number){
-    return this.http.delete(environment.apiURL + '/Order/' + id)
+
+    return this.http.delete('http://localhost:4000/deleteBy/' + id)
     .pipe(retry(1),
     catchError(this.errorHandl));
   }

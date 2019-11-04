@@ -11,11 +11,12 @@
     <tbody>
         <tr *ngFor="let item of orderList">
             <th (click)="openForEdit(item.OrderID)">{{item.OrderNo}}</th>
-            <td>{{item.Customer}}</td>
+            <!-- <td>{{item.Customer}}</td> -->
+            <td>{{item.Name}}</td>
             <td>{{item.PMethod}}</td>
             <td>{{item.GTotal}}</td>
             <td>
-                <a class="btn text-danger" (click)="onOrderDelete(item.OrderID)"> <i class="fa fa-trash fa-lg"></i> Delete Order</a>
+                <a class="btn btn-danger" (click)="onOrderDelete(item.OrderID)"> <i class="fa fa-trash fa-lg"></i> Delete Order</a>
             </td>
         </tr>
     </tbody>
